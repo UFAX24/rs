@@ -1,70 +1,266 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>realestate</title>
-    <link href="https://fonts.googleapis.com/css?family=Heebo:400,700|Oxygen:700" rel="stylesheet">
-    <link rel="stylesheet" href="dist/css/style.css">
-    <script src="https://unpkg.com/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <title>RSSSSSSSS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyCmMd6JeWGc6c9-J1wQ62ZfCZ2reJVPZPY",
+      authDomain: "realestate-ufax.firebaseapp.com",
+      databaseURL: "https://realestate-ufax-default-rtdb.firebaseio.com",
+      projectId: "realestate-ufax",
+      storageBucket: "realestate-ufax.appspot.com",
+      messagingSenderId: "1065511723737",
+      appId: "1:1065511723737:web:681001a7f7f2668df214c8",
+      measurementId: "G-Y5VFC8QSW1"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    #myInput {
+      background-image: url('https://cdn0.iconfinder.com/data/icons/very-basic-2-android-l-lollipop-icon-pack/24/search-512.png');
+      background-position: 10px 10px;
+      background-repeat: no-repeat;
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+    }
+    
+    #myTable {
+      border-collapse: collapse;
+      width: 100%;
+      border: 1px solid #ddd;
+      font-size: 18px;
+    }
+    
+    #myTable th, #myTable td {
+      text-align: left;
+      padding: 12px;
+    }
+    
+    #myTable tr {
+      border-bottom: 1px solid #ddd;
+    }
+    
+    #myTable tr.header, #myTable tr:hover {
+      background-color: #f1f1f1;
+    }
+    </style>
+
 </head>
-<body class="is-boxed has-animations">
-    <div class="body-wrap boxed-container">
-        <header class="site-header text-light">
-            <div class="container">
-                <div class="site-header-inner">
-                    <div class="brand header-brand">
-                        <h1 class="m-0">
-                            <a href="#">
-								<img class="header-logo-image" src="dist/images/logo.svg" alt="Logo">
-                            </a>
-                        </h1>
-                    </div>
-                </div>
-            </div>
-        </header>
 
-        <main>
-            <section class="hero text-center text-light">
-				<div class="hero-bg"></div>
-				<div class="hero-particles-container">
-					<canvas id="hero-particles"></canvas>
-				</div>
-                <div class="container-sm">
-                    <div class="hero-inner">
-						<div class="hero-copy">
-	                        <h1 class="hero-title mt-0">realestate</h1>
-	                        
-	                        <div class="hero-cta" ></div>
-								<script async src="https://cse.google.com/cse.js?cx=a961f73feff50325a"></script>
-							<div class="gcse-search" style="border-radius: 20px;"></div>
-								<!-- <a class="button button-primary button-wide-mobile" href="#">Get early access</a> -->
-							</div>
-						</div>
-						<div class="mockup-container">
-							<div class="mockup-bg">
-								<img src="dist/images/iphone-hero-bg.svg" alt="iPhone illustration">
-							</div>
-							<img class="device-mockup" src="dist/images/iphone-hero.png" alt="iPhone Hero">
-						</div>
-                    </div>
-                
-            </section>
+<body>
 
-        </main>
+  <div class="container">
+    <h2>RS</h2>
+    <p>กรุณา..รอข้อมูลด้วย:</p>
 
-		<footer class="site-footer">
-			<div class="footer-particles-container">
-				<canvas id="footer-particles"></canvas>
-			</div>
-			
-			<div class="site-footer-bottom">
-				
-			</div>
-        </footer>
-	</div>
-	</div>
-    <script src="dist/js/main.min.js"></script>
+   
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="ค้นหาจากชื่อ" title="Type in a name">
+    <table class="table table-striped table-bordered table-sm" id='table'>
+      <thead>
+        <tr>
+          <th>Website</th>
+          <th>price</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <script>
+          $(document).ready(function () {
+            var dotproperty = "https://realestate-ufax-default-rtdb.firebaseio.com/dotproperty/parsedResults.json?&print=pretty"//document.getElementById("inputQ");
+            $.getJSON(dotproperty,
+              function (data) {
+                var condoDaTa = '';             
+                // ITERATING THROUGH OBJECTS
+                $.each(data, function (key, value) {
+                  
+                  condoDaTa += '<tr>';
+
+                  condoDaTa += '<td style="font-size: 10px;">' +
+                    value.G_Title + '</td>';
+
+                  condoDaTa += '<td>' +
+                    value.Price + '</td>';
+
+                  condoDaTa += '<td><a href="' +
+                    value.Link + '"</a>Dotproperty</td>';
+
+                  condoDaTa += '</tr>';
+                  
+                });
+
+                //INSERTING ROWS INTO TABLE 
+                $('#table').append(condoDaTa);
+              });
+        
+              var livinginsider = "https://realestate-ufax-default-rtdb.firebaseio.com/livinginsider/parsedResults.json?&print=pretty"//document.getElementById("inputQ");
+              $.getJSON(livinginsider,
+                function (data) {
+                  var condoDaTa = '';             
+                  // ITERATING THROUGH OBJECTS
+                  $.each(data, function (key, value) {
+                    
+                    condoDaTa += '<tr>';
+  
+                    condoDaTa += '<td style="font-size: 10px;">' +
+                      value.G_Title + '</td>';
+  
+                    condoDaTa += '<td>' +
+                      value.Price + '</td>';
+  
+                    condoDaTa += '<td><a href="' +
+                      value.Link + '"</a>livinginsider</td>';
+  
+                    condoDaTa += '</tr>';
+                    
+                  });
+  
+                  //INSERTING ROWS INTO TABLE 
+                  $('#table').append(condoDaTa);
+              
+              });
+          });
+        </script>
+      </tbody>
+    </table>
+    <div id="test"></div>
+<script >
+              var starCountRef = firebase.database().ref('livinginsider/parsedResults/');
+              starCountRef.on('value', (snapshot) => {
+              const livinginsider = snapshot.val();
+              console.log(livinginsider['G_Title'])
+    
+ 
+
+  });
+</script>
+<script>
+  function myFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("table");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+  
+  }
+  </script>
+<!-- <script>
+  var database = firebase.database();
+  database.ref('/').once('value', function(snapshot){
+      if(snapshot.exists()){
+          var content = '';
+          snapshot.forEach(function(data){
+              var val = data.val();
+              //console.log(val.G_Title)
+              //content +='<tr>';
+              //content += '<td>' + val.descripcion + '</td>';
+              //content += '<td>' + val.direccion + '</td>';
+              //content += '<td>' + val.estado + '</td>';
+              //content += '<td>' + val.imagen + '</td>';
+              //content += '</tr>'; 
+          });
+          //console.log(content)
+          $('#test').append(content);
+      }
+  });
+</script> -->
+    <!-- <script>
+      var database = firebase.database();
+      function LoginwriteUserData(name, email,providerId ,nowDate) {
+        firebase.database().ref('UFAPRO888S_SPIN_USERS/' + name).set({
+          username: name,
+          email: email,
+          nowDate: nowDate,
+          userID: providerId
+        });
+      }
+
+      $("#login_panel").find(".btn_login").on("click", function () {
+
+        var GoogleAuthProvider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithRedirect(GoogleAuthProvider);
+      });
+      $("#login_panel").find(".btn_sign_out").on("click", function () {
+
+        firebase.auth().signOut().then(function () {
+
+        });
+
+      });
+      var now_time = new Date().toISOString().split('T');
+      firebase.auth().onAuthStateChanged(function (user) {
+        if (user) // เมื่อผู้ใช้อยู่ใน สถานะ login
+        
+        {
+          console.log(user.uid);
+          
+          LoginwriteUserData(user.uid ,user.displayName, user.email,  now_time[0],"")
+          console.log("SAVEDATA")
+          var starCountRef = firebase.database().ref('UFAPRO888S_SPIN_USERS/' + user.displayName);
+          starCountRef.on('value', (snapshot) => {
+            const data = snapshot.val();
+            console.log(data)
+          });
+          $("#login_panel").find(".open_Spin").css("display", "");
+          $("#login_panel").find(".btn_login").css("display", "none");
+          $("#login_panel").find(".btn_sign_out").css("display", "");
+          $("#login_panel").find(".user_info").html(user.displayName);
+          $("#appSpin").find(".user_info").html(user.displayName);
+         
+        } else // เมื่อผู้ใช้ไม่ได้อยู่ใน สถานะ login
+        {
+          $("#login_panel").find(".open_Spin").css("display", "none");
+          $("#login_panel").find(".btn_login").css("display", "");
+          $("#login_panel").find(".btn_sign_out").css("display", "none");
+          $("#login_panel").find(".user_info").html("");
+
+        }
+        
+      });
+    </script> -->
+
+
+  </div>
+
 </body>
+
 </html>
