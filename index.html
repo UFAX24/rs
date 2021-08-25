@@ -147,6 +147,84 @@
                   $('#table').append(condoDaTa);
               
               });
+              var kaidee = "https://realestate-ufax-default-rtdb.firebaseio.com/kaidee/parsedResults.json?&print=pretty"//document.getElementById("inputQ");
+              $.getJSON(kaidee,
+                function (data) {
+                  var condoDaTa = '';             
+                  // ITERATING THROUGH OBJECTS
+                  $.each(data, function (key, value) {
+                    
+                    condoDaTa += '<tr>';
+  
+                    condoDaTa += '<td style="font-size: 10px;">' +
+                      value.G_Title + '</td>';
+  
+                    condoDaTa += '<td>' +
+                      value.Price + '</td>';
+  
+                    condoDaTa += '<td><a href="' +
+                      value.Link + '"</a>kaidee</td>';
+  
+                    condoDaTa += '</tr>';
+                    
+                  });
+  
+                  //INSERTING ROWS INTO TABLE 
+                  $('#table').append(condoDaTa);
+              
+              });
+              var bkkcitismart = "https://realestate-ufax-default-rtdb.firebaseio.com/bkkcitismart/parsedResults.json?&print=pretty"//document.getElementById("inputQ");
+              $.getJSON(bkkcitismart,
+                function (data) {
+                  var condoDaTa = '';             
+                  // ITERATING THROUGH OBJECTS
+                  $.each(data, function (key, value) {
+                    
+                    condoDaTa += '<tr>';
+  
+                    condoDaTa += '<td style="font-size: 10px;">' +
+                      value.G_Title + '</td>';
+  
+                    condoDaTa += '<td>' +
+                      value.Price + '</td>';
+  
+                    condoDaTa += '<td><a href="' +
+                      value.Link + '"</a>bkkcitismart</td>';
+  
+                    condoDaTa += '</tr>';
+                    
+                  });
+  
+                  //INSERTING ROWS INTO TABLE 
+                  $('#table').append(condoDaTa);
+              
+              });
+              var zmyhome = "https://realestate-ufax-default-rtdb.firebaseio.com/zmyhome/parsedResults.json?&print=pretty"//document.getElementById("inputQ");
+              $.getJSON(zmyhome,
+                function (data) {
+                  var condoDaTa = '';             
+                  // ITERATING THROUGH OBJECTS
+                  $.each(data, function (key, value) {
+                    
+                    condoDaTa += '<tr>';
+  
+                    condoDaTa += '<td style="font-size: 10px;">' +
+                      value.G_Title + '</td>';
+  
+                    condoDaTa += '<td>' +
+                      value.Price + '</td>';
+  
+                    condoDaTa += '<td><a href="' +
+                      value.Link + '"</a>zmyhome</td>';
+  
+                    condoDaTa += '</tr>';
+                    
+                  });
+  
+                  //INSERTING ROWS INTO TABLE 
+                  $('#table').append(condoDaTa);
+              
+              });
           });
         </script>
       </tbody>
@@ -213,18 +291,13 @@
           userID: providerId
         });
       }
-
       $("#login_panel").find(".btn_login").on("click", function () {
-
         var GoogleAuthProvider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithRedirect(GoogleAuthProvider);
       });
       $("#login_panel").find(".btn_sign_out").on("click", function () {
-
         firebase.auth().signOut().then(function () {
-
         });
-
       });
       var now_time = new Date().toISOString().split('T');
       firebase.auth().onAuthStateChanged(function (user) {
@@ -252,7 +325,6 @@
           $("#login_panel").find(".btn_login").css("display", "");
           $("#login_panel").find(".btn_sign_out").css("display", "none");
           $("#login_panel").find(".user_info").html("");
-
         }
         
       });
